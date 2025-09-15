@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* --- Variables de Color --- */
+:root {
+    --primary-color: #42B4C9;   /* Azul de Finn */
+    --secondary-color: #FEE63E; /* Amarillo de Jake */
+    --accent-color: #F8D2E2;    /* Rosa de Dulce Princesa */
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+    --header-footer-bg: #ffffff;
+}
+
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* --- Header y Navegación --- */
+header {
+    background-color: var(--header-footer-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #3a8dff; /* Azul de Finn */
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 20px auto 30px auto;
+    max-width: fit-content;
+}
+
+nav a {
+    font-family: 'Bangers', cursive;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 8px 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+nav a:hover, nav a.active {
+    background-color: #ffcc00; /* Amarillo de Jake */
+    color: #3a8dff; /* Azul de Finn */
+}
+
+#hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #hamburger-menu {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+}
+
+
+/* --- Contenido Principal --- */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    font-family: 'Bangers', cursive;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section ul {
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.social-media {
+    margin-top: 1rem;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Estilos de temporadas.html --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.season-card {
+    background-color: #ffffff;
+    border: 3px solid #bde0fe; /* Borde azul claro */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.season-card h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    color: #4a90e2; /* Azul más oscuro */
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 2px dashed #ffc107;
+    padding-bottom: 10px;
+}
+
+.episode-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.episode-list li {
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-left: 5px solid #ffc107; /* Acento amarillo */
+    border-radius: 5px;
+    transition: background-color 0.2s ease, border-left-color 0.2s ease;
+}
+
+.episode-list li:hover {
+    background-color: #fff3cd; /* Amarillo claro al pasar el ratón */
+    border-left-color: #e5a00d;
+}

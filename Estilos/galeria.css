@@ -1,0 +1,136 @@
+/* Estilos generales */
+body {
+    background-color: #f0f8ff; /* Un azul cielo muy claro */
+    color: #333;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 20px 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a2d2ff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 4rem;
+    color: #ffcc00; /* Amarillo de Jake */
+    text-shadow: 3px 3px 0 #3a8dff, -1px -1px 0 #3a8dff, 1px -1px 0 #3a8dff, -1px 1px 0 #3a8dff, 1px 1px 0 #3a8dff; /* Borde azul de Finn */
+    letter-spacing: 2px;
+}
+
+/* Cuadrícula de la galería */
+.gallery-grid {
+    display: grid;
+    /* Crea 4 columnas en escritorio, 2 en tablet y 1 en móvil */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tarjeta de personaje (el rectángulo) */
+.character-card {
+    background-color: #ffffff;
+    border: 3px solid #bde0fe; /* Borde azul claro */
+    border-radius: 15px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.character-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(68, 149, 255, 0.2);
+}
+
+/* Contenedor de la imagen (el círculo) */
+.character-image-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Esto crea el círculo */
+    overflow: hidden; /* Esto recorta la imagen para que encaje en el círculo */
+    margin-bottom: 20px;
+    border: 6px solid #ffcc00; /* Borde amarillo de Jake */
+    background-color: #f0f0f0; /* Color de fondo si la imagen no carga */
+    flex-shrink: 0; /* Evita que el círculo se encoja */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.character-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el círculo sin deformarse */
+}
+
+/* Nombre del personaje */
+.character-name {
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    color: #4a90e2; /* Azul más oscuro */
+    margin: 0 0 10px 0;
+}
+
+/* Descripción del personaje */
+.character-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #3a8dff; /* Azul de Finn */
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+nav a {
+    font-family: 'Bangers', cursive;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 8px 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+nav a:hover, nav a.active {
+    background-color: #ffcc00; /* Amarillo de Jake */
+    color: #3a8dff; /* Azul de Finn */
+}
